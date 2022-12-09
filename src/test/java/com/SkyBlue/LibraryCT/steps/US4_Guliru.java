@@ -62,25 +62,23 @@ public class US4_Guliru {
         String query = "select author,name,year from books where name ='Chordeiles minor'";
 
 
-
         DB_Util.runQuery(query);
 
-        Map<String,String> bookInfo = DB_Util.getRowMap(1);
+        Map<String, String> bookInfo = DB_Util.getRowMap(1);
 
 
         String expectedName = bookInfo.get("name");
 
-        String expectedAuthor =bookInfo.get("author");
+        String expectedAuthor = bookInfo.get("author");
 
         String expectedYear = bookInfo.get("year");
 
 
+        Assert.assertEquals(expectedName, actualName);
 
-        Assert.assertEquals(expectedName,actualName);
+        Assert.assertEquals(expectedYear, actualYear);
 
-        Assert.assertEquals(expectedYear,actualYear);
-
-        Assert.assertEquals(expectedAuthor,actualAuthor);
+        Assert.assertEquals(expectedAuthor, actualAuthor);
 
     }
 
